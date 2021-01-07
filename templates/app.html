@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Calculator App</title>
+    <style>
+        body{
+            background-color:aliceblue;
+            margin:50px auto
+        }
+        h3{
+            text-align:center;
+            font-weight:bold;
+            color:blue
+        }
+        form{
+            margin-top:30px
+        }
+        label{
+            font-size:20px
+        }
+        input{
+            width:100%;
+            color:blue;
+            font-size:15px;
+        }
+        input[type="submit"]{
+            background-color: white;
+            color: blue;
+            font-weight: 800;
+            font-size: 13px;
+            border-color:blue
+        }
+        select{
+            width:20%;
+            font-size:15px
+        }
+        .alert{
+            background-color:white;
+            display:block;
+            position: relative;
+            text-align:center;
+            margin:20px auto;
+            color:black;
+            font-size:20px;
+            width:50%;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h3>SB Qualification Calculator</h3>
+    </div>
+    <div class="container">
+        <form action="/send" method="POST">
+<!--             <label for="first number">First Number</label>
+            <input type="text" placeholder="Enter your first number" name="first">
+ -->
+ <!--            <label for="second number">Second Number </label>
+            <input type="text" placeholder="Enter your second number" name="second">
+ -->
+            <label for="who_registered">who_registered</label>
+            <select name="who_registered">
+                <option value="parent">Parent</option>
+                <option value="student">Student</option>
+                <option value="someone_else">Others</option>
+            </select>
+
+            <label for="city_tier">city_tier</label>
+            <select name="city_tier">
+                <option value="t1">T1</option>
+                <option value="t2">T2</option>
+                <option value="t3">T3+</option>
+            </select>
+
+            <label for="school_board">school_board</label>
+            <select name="school_board">
+                <option value="cbse">CBSE</option>
+                <option value="icse">ICSE</option>
+                <option value="state_board">State_Board</option>
+                <option value="others">Others</option>
+            </select>
+
+            <label for="accual_school_fee">annual_school_fee</label>
+            <select name="accual_school_fee">
+                <option value="under_10">under_10k</option>
+                <option value="10_20">10-20k</option>
+                <option value="20_30">20k-30k</option>
+                <option value="30_40">30k-40k</option>
+                <option value="40_60">40k-60k</option>
+                <option value="60_80">60k-80k</option>
+                <option value="80_100">80k-100k</option>
+                <option value="100_1000">over_100k</option>
+                <option value="none">not_discolsed</option>
+            </select>
+
+            <input type="submit" value="calculate">
+
+            <div class="alert">
+                Who registered : {{reg}} 
+            </div>
+            <div class="alert">
+                City tier : {{city}} 
+            </div>
+            <div class="alert">
+                School Board : {{board}} 
+            </div>
+            <div class="alert">
+                Annual Fee : {{fee}} 
+            </div>
+
+            <div class="alert">
+                Final Score : {{sum}}
+            </div>
+
+        </form>
+    </div>
+    
+    
+</body>
+</html>
